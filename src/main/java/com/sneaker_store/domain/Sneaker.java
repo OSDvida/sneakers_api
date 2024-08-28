@@ -1,16 +1,36 @@
 package com.sneaker_store.domain;
 
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+
+@Entity
 public class Sneaker {
+    @Id
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @Column(name = "id", nullable = false)
+    private Long id;
     private String name;
     private double price;
     private String unityMeasure;
     private double size;
     private String color;
 
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
     public Sneaker() {
     }
 
-    public Sneaker(String name, double price, String unityMeasure, double size, String color) {
+    public Sneaker(Long id, String name, double price, String unityMeasure, double size, String color) {
+        this.id = id;
         this.name = name;
         this.price = price;
         this.unityMeasure = unityMeasure;
