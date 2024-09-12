@@ -1,4 +1,4 @@
-package com.sneaker_store.presentation;
+package com.sneaker_store.presentation.controller;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
