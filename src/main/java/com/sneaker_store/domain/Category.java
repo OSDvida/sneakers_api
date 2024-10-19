@@ -34,6 +34,5 @@ public class Category {
     private String description;
 
     @OneToMany(mappedBy = "category", fetch = FetchType.LAZY)
-    @JsonIgnore
     private List<Sneaker> sneakers;
 }

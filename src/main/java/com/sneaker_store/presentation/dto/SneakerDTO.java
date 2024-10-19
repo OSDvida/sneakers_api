@@ -21,7 +21,9 @@ public class SneakerDTO {
 
     private String color;
 
-    private Category category;
+    private String imagePath;
 
-    private Brand brand;
+    private CategoryDTO category;
+
+    private BrandDTO brand;
 }

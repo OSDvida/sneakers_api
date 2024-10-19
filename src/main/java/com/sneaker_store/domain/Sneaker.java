@@ -41,6 +41,9 @@ public class Sneaker {
     @Column(name = "color")
     private String color;
 
+    @Column(name = "image_path")
+    private String imagePath;
+
     @ManyToOne
     @JoinColumn(name = "category_id", nullable = false)
     private Category category;
