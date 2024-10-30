@@ -14,4 +14,18 @@ spring:
       hibernate:
         dialect: org.hibernate.dialect.PostgreSQLDialect
         default_schema: sneaker_store
+  cloud:
+    aws:
+      credentials:
+        access_key: ${AWS_ACCESS_KEY}
+        secret_key: ${AWS_SECRET_ACCESS_KEY}
+      region:
+        static: eu-north-1
+      s3:
+        bucket: sneaker-store-bucket
 
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          jwk-issuer-uri: http://localhost:8080/realms/master

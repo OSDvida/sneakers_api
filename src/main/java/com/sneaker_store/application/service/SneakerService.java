@@ -17,8 +17,12 @@ public class SneakerService {
     private final SneakerMapper sneakerMapper;
 
     public List<SneakerDTO> findAll(){
-        List<Sneaker> sneakers = sneakerRepository.findAll();
+        List<Sneaker> sneakers = sneakerRepository.findAllOrderByImagePathDesc();
         return sneakerMapper.toDTOList(sneakers);
     }
 
+    public void create(SneakerDTO dto) {
+        Sneaker sneakerToSave = sneakerMapper.toEntity(dto);
+        sneakerRepository.save(sneakerToSave);
+    }
 }
