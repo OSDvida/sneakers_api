@@ -21,4 +21,8 @@ public class SneakerService {
         return sneakerMapper.toDTOList(sneakers);
     }
 
+    public void create(SneakerDTO dto) {
+        Sneaker sneakerToSave = sneakerMapper.toEntity(dto);
+        sneakerRepository.save(sneakerToSave);
+    }
 }

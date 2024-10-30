@@ -8,6 +8,7 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
+import jakarta.persistence.SequenceGenerator;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -22,7 +23,8 @@ import lombok.Setter;
 @AllArgsConstructor
 public class Sneaker {
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "sneaker_id_seq_generator")
+    @SequenceGenerator(name = "sneaker_id_seq_generator", sequenceName = "sneaker_id_seq", allocationSize = 1)
     @Column(name = "id", nullable = false)
     private Long id;
 
